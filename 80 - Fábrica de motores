@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+	int m0[11], m1[11];
+	double cm0, lm0, cm1, lm1, c, l, x = 0, x1 = 0, y = 0, y1 = 0;
+	
+	for(int i = 0; i <= 11; i++){
+		scanf("%d %d", &m0[i], &m1[i]);
+	}
+	
+	scanf("%lf%lf", &cm0, &lm0);
+	scanf("%lf%lf", &cm1, &lm1);
+	
+	for(int i = 0; i <= 11; i++){
+		c = m0[i] * cm0;
+		l = m0[i] * lm0;
+		
+		x = x + c;
+		x1 = x1 + l;
+		
+		printf("Motor[0], Mes[%d], custo=[%.2lf], lucro=[%.2lf]\n", i+1, c, l);
+	}
+	
+	for(int i = 0; i <= 11; i++){
+		c = m1[i] * cm1;
+		l = m1[i] * lm1;
+		
+		y = y + c;
+		y1 = y1 + l;
+			
+		printf("Motor[1], Mes[%d], custo=[%.2lf], lucro=[%.2lf]\n", i+1, c, l);
+	}
+	
+	printf("Motor[0], anual, custo=[%.2lf], lucro=[%.2lf]\n", x, x1);
+	printf("Motor[1], anual, custo=[%.2lf], lucro=[%.2lf]\n", y, y1);
+	
+	return 0;
+}
