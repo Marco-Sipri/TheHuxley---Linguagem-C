@@ -1,0 +1,36 @@
+#include <stdio.h>
+struct SPRINKLERS{
+    int id;
+    float tp;
+    char fum[2];
+};
+
+int main()
+{
+    struct SPRINKLERS s[1000];
+    int ncaso = 0, n = 0, i = 0, j = 0;
+    float media;
+
+    scanf("%d", &ncaso);
+
+    for(j = 1; j <= ncaso; j++){
+        media = 0.0;
+        scanf("%d", &n); 
+        for(i = 1; i <= n; i++){
+            scanf("%d", &s[i].id); fflush(stdin);
+            scanf("%f", &s[i].tp); fflush(stdin);
+            scanf(" %[^\n]s", s[i].fum); fflush(stdin);
+            media += s[i].tp;
+        }
+        media = media / (float)n;
+        printf("TESTE %d\n", j);
+
+        for(i = 1; i <= n; i++){
+            if((strcmp(s[i].fum, "S") == 0) || (s[i]. tp >= 40.0) || (s[i].tp > media * 1.15)) {
+                printf("%d\n", s[i].id);
+            }
+        }
+    }
+
+    return 0;
+}
