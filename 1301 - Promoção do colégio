@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+double med[2], mediaf[2];
+
+double fmedia(double nota, int x){
+    double m;
+
+    m = nota / (x / 2);
+    return m;
+}
+
+struct Aluno{
+    char nome[100];
+    double nota;
+};
+
+struct Turmas{
+    struct Aluno a[40];
+};
+
+int main()
+{
+    struct Turmas t[2];
+
+    int i, j = 0, y = 0, k[2], m, n;
+    char b[2] = {'*'}, nomemaior[100];
+    double notamaior = 0;
+
+    med[0] = 0;
+    med[1] = 0;
+    k[0] = 0;
+    k[1] = 0;
+    i = 0;
+
+    do{
+        gets(t[i].a[j].nome);
+        if(strcmp(t[i].a[j].nome, b) != 0){
+            scanf("%lf", &t[i].a[j].nota); fflush(stdin);
+            med[i] += t[i].a[j].nota;
+            k[i] = k[i] + 1;
+            j++;
+        }
+        if(strcmp(t[i].a[j].nome, b) == 0){
+            i++;
+        }
+    }while(i != 1);
+
+    m = 1;
+    n = 0;
+    do{
+        gets(t[m].a[n].nome);
+        if(strcmp(t[m].a[n].nome, b) != 0){
+            scanf("%lf", &t[m].a[n].nota); fflush(stdin);
+            med[m] += t[m].a[n].nota;
+            k[m] = k[m] + 1;
+            n++;
+        }
+        if(strcmp(t[m].a[n].nome, b) == 0){
+            m++;
+        }
+    }while(m != 2);
+
+    for(i = 0; i < 2; i++){
+        mediaf[i] = fmedia(med[i], k[i]);
+    }
+
+    if(mediaf[0] > 8 && mediaf[1] < 8){
+        printf("Viagem para turma A\n");
+    }
+    if(mediaf[0] < 8 && mediaf[1] > 8){
+        printf("Viagem para turma B\n");
+    }
+    if(mediaf[0] > 8 && mediaf[1] > 8){
+        printf("Viagem para todos!\n");
+    }
+    if(mediaf[0] < 8 && mediaf[1] < 8){
+        printf("Nenhuma das turmas viaja...\n");
+    }
+
+    y = 0;
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < k[i]; j++){
+            if(t[i].a[j].nota > notamaior && t[i].a[j].nota > 8){
+                strcpy(nomemaior, t[i].a[j].nome);
+                notamaior = t[i].a[j].nota;
+                y++;
+            }
+        }
+    }
+    if(y > 0){
+        printf("%s ganhou viagem e ingresso no parque!\n", nomemaior);
+        printf("Nota: %.2lf\n", notamaior);
+    }
+    if(y == 0){
+        printf("Ninguem ganhou viagem e ingresso no parque...\n");
+    }
+
+    return 0;
+}
