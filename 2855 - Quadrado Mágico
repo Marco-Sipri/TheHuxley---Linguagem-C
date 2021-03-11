@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(){
+    int n, l = 0, c = 0, d = 0;
+    
+    printf("Digite a dimensao da matriz quadrada N x N:\n");
+    scanf("%d", &n);
+    int v[n][n];
+    
+    printf("Digite os elementos da matriz:\n");
+    for(int i = 0; i < n; i++){
+    	for(int j = 0; j < n; j++){
+        	scanf("%d", &v[i][j]);
+    	}
+    }
+    
+    for(int i = 0; i < 1; i++){
+    	for(int j = 0; j < n; j++){
+        	l = l + v[i][j];
+        	c = c + v[j][i];
+        	d = d + v[j][j];
+    	}
+    }
+    
+    if(l == c && l == d && d == c){
+    	printf("Os elementos FORMAM um quadrado magico.\n");
+    	printf("A soma do quadrado magico e %d.\n", l);
+	}else{
+		printf("Os elementos NAO FORMAM um quadrado magico.\n");
+	}
+    
+    return 0;
+}
