@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+    char ataque[50], defesa[50];
+	int x;
+
+    fgets(ataque, 50, stdin);
+    fgets(defesa, 50, stdin);
+    
+    if(ataque[0] == defesa[0]){
+    	printf("Empate\n");
+	}else if(ataque[0] == 'A' && defesa[0] == 'F'){
+		printf("Vantagem\n");
+	}else if(ataque[0] == 'A' && defesa[0] == 'P'){
+		printf("Desvantagem\n");
+	}else if(ataque[0] == 'A' && defesa[0] == 'P'){
+		printf("Desvantagem\n");
+	}else if(ataque[0] == 'P' && defesa[0] == 'F'){
+		printf("Desvantagem\n");
+	}else if(ataque[0] == 'P' && defesa[0] == 'A'){
+		printf("Vantagem\n");
+	}else if(ataque[0] == 'F' && defesa[0] == 'A'){
+		printf("Desvantagem\n");
+	}else if(ataque[0] == 'F' && defesa[0] == 'P'){
+		printf("Vantagem\n");
+	}
+
+    return 0;
+}
