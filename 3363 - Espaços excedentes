@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    char string[300];
+    int x;
+    
+    fgets(string, 300, stdin);
+    
+    x = strlen(string);
+    
+    if(string[x-1]=='\n')
+        string[x-1]='\0';
+        
+    x = strlen(string);
+    
+    for(int i=0; i<x; i++){
+        if(string[i]!=' ')
+        {
+            printf("%c", string[i]);
+            }else if(string[i+1]!=' '){
+                  printf("%c", string[i]);
+        
+        }
+        
+    }
+    
+	return 0;
+}
