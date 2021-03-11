@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+main (){
+    char palavra[100];
+	char letra1[2], letra2[2];
+	int x;
+
+    fgets(palavra, 100, stdin);
+    scanf(" %s", &letra1);
+    scanf(" %s", &letra2);
+    
+    x = strlen(palavra);
+    
+    for(int i = 0; i < x; i++){
+    	if(palavra[i] == letra1[0]){
+    		palavra[i] = letra2[0];
+		}
+	}
+
+	printf("%s\n", palavra);
+	
+    return 0;
+}
