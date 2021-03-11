@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+
+struct CLIENTE{
+    int pass;
+    char data[20];
+    char de[45], para[45], hora[20];
+    int poltrona;
+    float idade;
+    char nome[30];
+    
+};
+
+int main() {
+    struct CLIENTE form[45];
+    int i, tam;
+    float media,count=0,soma;
+    for(i=1;i<=44;i++){
+        scanf("%d\n",&form[i].pass);
+        if(form[i].pass==-1)
+            break;
+
+
+    gets(form[i].data);
+
+    gets(form[i].de);
+
+    gets(form[i].para);
+ 
+    gets(form[i].hora);
+
+    scanf("%d\n",&form[i].poltrona);
+
+    scanf("%f\n",&form[i].idade);
+        soma=soma+form[i].idade;
+        count++;
+
+    gets(form[i].nome);
+
+    }
+            
+    media=soma/count;
+
+    for(i=0;i<count;i++){
+        if(media<form[i].idade&&(form[i].poltrona)%2==0)
+            puts(form[i].nome);
+    }
+                puts(form[i].nome);
+	return 0;
+}
