@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+struct MENU{
+    int cod;
+    char nome[21];
+    float preco;
+};
+int main() {
+    int i=0,n=0,CodPedido,QtdPedido;
+    float PrecoPedido=0.0;
+    scanf("%d",&n);
+    struct MENU form[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&form[i].cod);
+        fflush(stdin);
+        scanf(" %[^\n]s",form[i].nome);
+        fflush(stdin);
+        scanf("%f",&form[i].preco);
+        fflush(stdin);
+    }
+    do{
+        scanf("%d\n",&CodPedido);
+        if(CodPedido!=0){
+            scanf("%d",&QtdPedido);
+            if(QtdPedido>0){
+            
+                for(i=0;i<n;i++){
+                    if(CodPedido==form[i].cod){
+                        PrecoPedido+=QtdPedido*form[i].preco;                    
+                    }
+                
+                }
+        }
+        }
+    }while(CodPedido!=0);
+    printf("%.2f\n",PrecoPedido);
+	return 0;
+}
