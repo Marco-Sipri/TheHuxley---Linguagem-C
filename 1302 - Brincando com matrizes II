@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+	int v[3][3], n, aux = 0, m, d, x = 0, y = 0, comp;
+	double aux1 = 0;
+	
+	for(int i = 0; i < 3; i++){
+		for(int j = 0; j < 3; j++){
+			scanf("%d", &n);
+			v[i][j] = n;
+			
+			if(n > 0){
+				y++;
+				aux1 = aux1 + n;
+			}
+		}
+	}
+	
+	aux1 = aux1 / y;
+	comp = v[0][0];
+	
+	for(int i = 0; i < 3; i++){
+		for(int j = 0; j < 3; j++){
+			if(j != i){
+				x = x + v[i][j];
+			}
+			if(v[i][j] <= comp){
+				m = v[i][j];
+				comp = v[i][j];
+			}
+		}
+	}
+	
+	if(m%2 == 0){
+		d = 1;
+	}else{
+		d = 0;
+	}
+	
+	printf("%.2lf %d %d %d", aux1, m, d, x);		
+	
+	return 0;
+}
