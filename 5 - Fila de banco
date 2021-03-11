@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main() {
+    int n, m, k, aux, o, p, vf[10000];
+    
+    scanf("%d", &n);
+    scanf("%d", &m);
+    scanf("%d", &k);
+    int vn[n], vm[m];
+    
+    for(int i = 0; i < n; i++)
+        scanf("%d", &vn[i]);
+        
+    for(int i = 0; i < m; i++)
+        scanf("%d", &vm[i]);
+        
+    aux = m + n;
+    if(k == 2){
+        o = 0;
+        p = 0;
+        
+        for(int j = 0; j < aux; j++){
+            if(o < n){
+            	vf[j] = vn[o];
+            o++;
+            
+            if(p < m)
+                j++;
+			}
+			
+            if(p < m){
+            vf[j] = vm[p];
+            p++;
+            }
+        }
+    }else if(k == 1){
+        o = 0;
+        p = 0;
+        
+        for(int j = 0; j < aux; j++){
+            if(o < m){
+	        	vf[j] = vm[o];
+	            o++;
+	            if(p < n)
+	                j++;
+            }
+            
+            if(p < n){
+            vf[j] = vn[p];
+                p++;
+            }
+        }
+    }
+    
+    for(int i = 0; i < aux; i++)
+        printf("%d\n", vf[i]);
+    return 0;
+}
