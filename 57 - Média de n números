@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h> 
+
+int main(void) {
+	int i = 0, n = 0;
+	double v[10000], aux1 = 0, media, aux = 0, x = 0, desvio;
+	do {
+		scanf("%lf",&v[i]);
+		
+		if(v[i] != -1) {
+
+			aux1 = aux1 + v[i];
+			aux++;
+		}
+		
+		i++;
+		
+	}while(v[i-1] != -1);
+	
+	media = aux1 / aux;
+	
+	for(i = 0; i < aux; i++){
+		
+		x = x + pow((v[i] - media), 2);
+		
+		if(v[i] > media)
+		{
+			n++;
+		}
+	}
+	
+	desvio = sqrt(x / (aux - 1));
+	
+	printf("%.2lf\n", media);
+	printf("%.2lf\n", desvio);
+	printf("%d\n", n);
+	
+	return 0;
+}
