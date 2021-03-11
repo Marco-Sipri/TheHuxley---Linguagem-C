@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+	int m, t, aux;
+	
+	scanf("%d", &m);
+	int v[m][m], v1[m][m], x = m;
+	
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < m; j++){
+			scanf("%d", &t);
+			
+			if(t < 0){
+				aux = t * 2;
+				v[i][j] = aux;
+			}else{
+				v[i][j] = t;
+			}
+			
+		}
+	}
+	
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < m; j++){
+			x--;
+			v1[i][j] = v[x][i];	
+		}
+		x = m;
+	}
+	
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < m; j++){
+			v1[j][i] = v[i][j];	
+		}
+	}
+	
+	
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < m; j++){
+			printf("%d", v1[i][j]);
+			
+			if(j != m-1){
+				printf(" ");
+			}else if(j == m-1){
+				printf("\n");
+			}
+		}
+	}
+	
+	return 0;
+}
