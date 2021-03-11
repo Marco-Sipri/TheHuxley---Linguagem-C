@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main(void) { 
+	int vetor[10000], N, aux = 0, win;
+	double ali = 0, alc = 0, br = 0, nl = 0, x = 0, maior, menor;
+	
+	do{
+		aux++;
+		scanf("%d", &vetor[aux]);
+		
+		if(vetor[aux] >= 0){
+			x++;
+		}
+		
+	}while(vetor[aux] != -1);
+	
+	for(aux = 1; aux <= x; aux++){
+		if(vetor[aux] == 83){
+			ali++;
+		}else if(vetor[aux] == 93){
+			alc++;
+		}else if(vetor[aux] == 0){
+			br++;
+		}else{
+			nl++;
+		}
+	} 
+	
+	maior = ((ali/(x - nl)) * 100);
+	menor = ((alc/(x - nl)) * 100);
+	
+	if(ali > alc){
+		win = 83;
+	} else if(alc > ali){
+		win = 93;
+	}else{
+		win = 93;
+	}
+
+	printf("%.0lf\n", ali);
+	printf("%.0lf\n", alc);
+	printf("%.0lf\n", br);
+	printf("%.0lf\n", nl);
+	printf("%d\n", win);
+	printf("%.2lf\n", maior);
+	printf("%.2lf\n", menor);
+
+	return 0;
+}
