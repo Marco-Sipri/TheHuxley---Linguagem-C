@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    char palavra[500];
+    int j = 0;
+    while (j == 0){
+        scanf(" %[^\n]",palavra);
+        for(int i = 0; i < strlen(palavra); i++){
+            palavra[i] = toupper(palavra[i]);
+            switch(palavra[i]){
+    			case '3': palavra[i] = 'E'; break;
+    			case '4': palavra[i] = 'A'; break;
+    			case '1': palavra[i] = 'I'; break;
+    			case '5': palavra[i] = 'S'; break;
+			}
+
+        }
+        if ((strcmp(palavra,"SAIR") == 0 || (strcmp(palavra,"FIM") == 0))){
+            j++;
+            break;
+        } else {
+            printf("%s\n",palavra);
+        }
+    }
+	return 0;
+}
