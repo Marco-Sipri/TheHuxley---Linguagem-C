@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int menor(int *p){
+    int i = 0, m = 1000000;
+    for (i = 0; i < 6; i++){
+        if (*(p+i) <= m)
+            m = *(p+i);
+    }
+    return m;
+}
+int maior(int *q){
+    int i = 0, m = -10000000;
+    for (i = 0; i < 6; i++){
+        if (*(q+i) >= m)
+            m = *(q+i);
+    }
+    return m;
+}
+int main(){
+    int i, maiorv,menorv;
+    int *v;
+    v = (int *)malloc(6*sizeof(int));
+    for (i = 0; i < 6; i++){
+        scanf("%d",v+i);
+    }
+    menorv = menor(v);
+    maiorv = maior(v);
+    printf("%d\n%d\n",menorv,maiorv);
+    free(v);
+    return 0;
+}
