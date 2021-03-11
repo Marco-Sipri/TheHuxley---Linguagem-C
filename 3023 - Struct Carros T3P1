@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct{
+    char marca[16];
+    int ano;
+    int preco;
+}T1P1;
+int main() {
+    T1P1 form[3];
+    int i,tam,p;
+    printf("Digite marca, ano e valor dos 3 carros:\n");
+    for(i=0;i<3;i++){
+        fgets(form[i].marca,16,stdin);
+        tam=strlen(form[i].marca);
+        if(form[i].marca[tam-1]=='\n')
+            form[i].marca[tam-1]='\0';
+        tam=strlen(form[i].marca);
+        scanf("%d\n",&form[i].ano);
+        scanf("%d\n",&form[i].preco);
+    
+    }
+    printf("Digite o preco maximo:\n");
+    scanf("%d",&p);
+    for(i=0;i<3;i++){
+        if(form[i].preco<p){
+            puts(form[i].marca);
+            printf("%d\n",form[i].ano);
+            printf("%d\n",form[i].preco);
+        }
+        
+    }
+    
+	return 0;
+}
