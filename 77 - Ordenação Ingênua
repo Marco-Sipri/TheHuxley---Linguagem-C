@@ -1,0 +1,38 @@
+#include <stdio.h> 
+
+int main(){
+	int v[10000], N, menor, indMenor, aux, i;
+	
+	scanf("%d", &N);
+	
+	for(i = 0; i < N; i++){
+		scanf("%d", &v[i]);
+	}
+	
+	for(i = 0; i < N; i++){
+		menor = v[i];
+		indMenor = i;
+		
+		for(int j = i + 1; j < N; j++){
+			
+			if(v[j] < menor){
+				menor = v[j];
+				indMenor = j;
+			}
+		}
+		
+		if (indMenor != i){
+			aux = v[i];
+			v[i] = v[indMenor];
+			v[indMenor] = aux;
+		}
+	}
+	
+	for(i = 0; i < N; i++){
+		printf("[%d]", v[i]);
+	}
+	
+	printf("\n");
+	return 0;
+	
+}
