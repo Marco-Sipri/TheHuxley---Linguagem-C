@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char palavra[100];
+	char aux[100];
+    int x;
+
+    scanf("%[^\n]s", palavra);
+    
+    x = strlen(palavra);
+    
+    for(int i = 0; i < x; i++){
+    	aux[i] = palavra[i];
+    	switch(aux[i]){
+    		case 'a': aux[i] = 'A'; break;
+    		case 'b': aux[i] = 'B'; break;
+    		case 'c': aux[i] = 'C'; break;
+    		case 'd': aux[i] = 'D'; break;
+    		case 'e': aux[i] = 'E'; break;
+    		case 'f': aux[i] = 'F'; break;
+    		case 'g': aux[i] = 'G'; break;
+    		case 'h': aux[i] = 'H'; break;
+    		case 'i': aux[i] = 'I'; break;
+    		case 'j': aux[i] = 'J'; break;
+    		case 'k': aux[i] = 'K'; break;
+    		case 'l': aux[i] = 'L'; break;
+    		case 'm': aux[i] = 'M'; break;
+    		case 'n': aux[i] = 'N'; break;
+    		case 'o': aux[i] = 'O'; break;
+    		case 'p': aux[i] = 'P'; break;
+    		case 'q': aux[i] = 'Q'; break;
+    		case 'r': aux[i] = 'R'; break;
+    		case 's': aux[i] = 'S'; break;
+    		case 't': aux[i] = 'T'; break;
+    		case 'u': aux[i] = 'U'; break;
+    		case 'v': aux[i] = 'V'; break;
+    		case 'w': aux[i] = 'W'; break;
+    		case 'x': aux[i] = 'X'; break;
+    		case 'y': aux[i] = 'Y'; break;
+    		case 'z': aux[i] = 'Z'; break;
+		}
+    	printf("%s\n", aux);
+	}
+    
+    return 0;
+}
