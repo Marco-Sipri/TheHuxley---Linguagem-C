@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+struct CADASTRO{
+	int idade;
+	char nome[100];
+	char sexo;
+	char estc;
+	int n1;
+	int n2;
+};
+
+int main(void) {
+	int x;
+	
+	scanf("%d", &x);
+	struct CADASTRO u[x];
+	
+	for(int i = 0; i < x; i++){
+		scanf("%d%*c", &u[i].idade);
+		fgets(u[i].nome, 100, stdin);
+		scanf("%c%*c", &u[i].sexo);
+		scanf("%c%*c", &u[i].estc);
+		scanf("%d%*c", &u[i].n1);
+		scanf("%d%*c", &u[i].n2);
+	}
+	
+	for(int i = 0; i < x; i++){
+		printf("Idade: %d\nNome: %sSexo: %c\nEstado Civil: %c\nNumero de amigos: %d\nNumero de fotos: %d\n\n", 
+			u[i].idade, u[i].nome, u[i].sexo, u[i].estc, u[i].n1, u[i].n2);
+	}
+		
+				
+	
+	return 0;
+}
