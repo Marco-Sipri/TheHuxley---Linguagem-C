@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int *par, *impar, i = 0, j = 0, a = 0, b = 0, n = 0;
+    par = (int *)malloc(5*sizeof(int));
+    impar = (int *)malloc(5*sizeof(int));
+    while (b < 15){
+        scanf("%d",&n);
+        if ( n % 2 == 0) {
+            *(par+i) = n;
+            i++;
+            if (i == 5){
+                for (a = 0; a < i; a++){
+                    printf("par[%d] = %d\n",a,*(par+a));
+                }
+                i = 0;
+            }
+        }
+        if (n % 2 != 0) {
+            *(impar+j) = n;
+            j++;
+            if (j == 5){
+                for (a = 0; a < j; a++){
+                    printf("impar[%d] = %d\n",a,*(impar+a));
+                }
+                j = 0;
+            }
+        }
+        b++;
+    }
+    if (j > 0){
+        for (a = 0; a < j; a++){
+            printf("impar[%d] = %d\n",a,*(impar+a));
+        }
+    }
+    if (i > 0){
+        for (a = 0; a < i; a++){
+            printf("par[%d] = %d\n",a,*(par+a));
+        }
+    }
+    free(par); free(impar);
+    return 0;
+}
