@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char palavra[50];
+    char letra[2];
+    int num = 0, x;
+    
+    scanf("%s", palavra);
+    scanf("%s", letra);
+    x = strlen(palavra);
+    
+    for(int i = 0; i < x; i++){
+    	if(palavra[i] == letra[0]){
+    		num++;
+		}
+	}
+	
+	printf("%d\n", num);
+    
+}
