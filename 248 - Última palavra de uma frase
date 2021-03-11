@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+    char frase[400], palavra[400] = "";
+    int j = 0;
+
+    scanf(" %[^\n]s", frase);
+
+    for(int i = 0; frase[i] != '\0'; i++){
+        palavra[j] = frase[i];
+        if(palavra[j] == ' ')
+            j = 0; 
+        else
+            j++;
+    }
+
+    palavra[j] = '\0';
+
+    printf("%s\n", palavra);
+    fflush(stdin);
+    getchar();
+
+    return 0;
+}
