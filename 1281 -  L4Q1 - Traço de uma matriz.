@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+	int N, M, i, j, matriz[100][100], T, D;
+	    
+	    scanf("%d", &N);
+	    scanf("%d", &M);
+	    
+	    for(i=0; i<N; i++){
+	        for(j=0; j<M; j++){
+	            scanf("%d", &matriz[i][j]);
+	        }
+	    }
+	    T=0;
+	    D=0;
+	    if(M==N){
+	        for(i=0; i<N; i++){
+	            for(j=0; j<M; j++){
+	                if(i==j)
+	                    T+=matriz[i][j];
+	                if(i+j==N-1)
+	                    D+=matriz[i][j];
+	            }
+	        }
+	        printf("%d\n%d\n", T, D);
+	    }
+	    else{
+	        printf("A matriz nao possui traco\n");
+	    }
+	    
+	    for(i=0; i<N; i++){
+	        for(j=0; j<M; j++){
+	            if(j==M-1)
+	                printf("%d\n", matriz[i][j]);
+	            else
+	                printf("%d ", matriz[i][j]);
+	        }
+	    }
+	
+	return 0;
+}
