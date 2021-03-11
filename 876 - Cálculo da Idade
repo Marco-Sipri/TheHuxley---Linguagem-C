@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+int main(){
+	int anoNasc, anoAtual, idade;
+	
+	scanf("%d", &anoNasc);
+	scanf("%d", &anoAtual);
+	
+	idade = anoAtual-anoNasc;
+	
+	printf("%d\n", idade);
+}
