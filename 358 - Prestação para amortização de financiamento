@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+double calculo(double v, int qtd, double t){
+    double x;
+    x = v / ((pow(1+t, qtd) - 1) / (t * pow(1+t,qtd)));
+    return x;
+}
+
+int main(){
+    double valor, taxa, p;
+    int qtd;
+
+    scanf("%lf%d%lf", &valor, &qtd, &taxa);
+    p = calculo(valor, qtd, taxa);
+    printf("%d\n", (int)p);
+    return 0;
+}
