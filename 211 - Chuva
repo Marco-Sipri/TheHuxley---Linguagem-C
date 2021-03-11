@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    int V[2][100][100], X, Y, Z, I, N, V2[100][100];
+    scanf("%d", &N);
+    for(X = 0; X < 2; X++)
+    {
+        for(Y = 0; Y < N; Y++)
+        {
+            for(Z = 0; Z < N; Z++)
+            {
+                scanf("%d", &V[X][Y][Z]);
+            }
+        }    
+    }
+    X = 0;
+    I = X + 1;
+    for(Y = 0; Y < N; Y++)
+    {
+        for(Z = 0; Z < N; Z++)
+        {
+            V2[Y][Z] = V[X][Y][Z] + V[I][Y][Z]; 
+        }
+    }    
+    for(Y = 0; Y < N; Y++)
+    {
+        for(Z = 0; Z < N; Z++)
+        {
+            printf("%d ", V2[Y][Z]);
+        }      
+    printf("\n");
+    }
+    return 0;
+}
