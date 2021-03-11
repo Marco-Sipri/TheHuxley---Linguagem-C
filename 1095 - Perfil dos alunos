@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+struct ALUNO{
+    float media;
+    char nome[40];
+    int idade;
+    char curso;
+};
+int main() {
+    struct ALUNO form;
+    char young[40];
+    int i=0,countf=0,countt=0,counts=0,menor=99;
+    do{
+        scanf("%f\n",&form.media);
+        if(form.media<0)
+            break;
+        else
+        if(form.media>=70)
+            countt++;
+        scanf("%s\n",form.nome);
+        scanf("%d\n",&form.idade);
+        if(form.idade<menor){
+            menor=form.idade;
+            strcpy(young,form.nome);
+           }
+        scanf("%c\n",&form.curso);
+        if(form.curso=='f')
+            if(form.media>=70)
+                countf++;
+        if(form.curso=='s')
+            if(form.media<70&&form.idade>=18)
+                counts++;
+            
+            
+        i++;    
+    }while(form.media>=0);
+    
+    printf("Quantidade de aprovados em filosofia : %d\n",countf);
+    if(i>1)
+    printf("O nome da pessoa mais jovem : %s\n",young);
+    printf("Quantidade de aprovados : %d\n",countt);
+    printf("Quantidade pessoas maiores de idade nao aprovadas em sociologia : %d\n",counts);
+	return 0;
+}
