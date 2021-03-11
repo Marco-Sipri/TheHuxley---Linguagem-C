@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(){
+    int i, n, x = 0, vetor[10];
+
+    for(i=0; i<10; i++){
+    	
+        scanf("%d", &n);
+        vetor[i] = n;   
+    }
+    
+    for(i=0; i<10; i++){
+    	
+        if(vetor[i] == vetor[9]){
+            x++;       
+        }
+    }
+    
+    printf("O numero %d apareceu %d vezes\n", vetor[9], x);
+    
+    return 0;
+}
