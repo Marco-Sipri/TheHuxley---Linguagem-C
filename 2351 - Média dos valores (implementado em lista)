@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+double MEDIA(double m, double qnt);
+
+int main(){
+	double n;
+	double soma = 0;
+	double media;
+	double num[100]; 
+	
+	scanf("%lf", &n);
+	
+	for(int i = 0; i < n; i++){
+		scanf("%lf", &num[i]);
+		
+		soma = soma + num[i];
+	}
+	
+	media = MEDIA(soma, n);
+	
+	printf("%.02lf", media);
+	
+	return 0;
+}
+
+double MEDIA(double m, double qnt){
+	double result;
+	
+	result = m/qnt;
+	
+	return(result);
+}
