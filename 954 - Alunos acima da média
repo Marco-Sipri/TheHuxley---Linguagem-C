@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+typedef struct REGISTRO{
+	int matricula;
+	char nome[30];
+	float nota;
+	
+}REGISTRO;
+void organize(REGISTRO registro[200], int x){
+    int i, j;
+    REGISTRO form;
+    for (i = 0; i < x - 1; i++){
+        for (j = 0; j < (x - 1-i); j++){
+            if (registro[j].matricula > registro[j + 1].matricula){
+                form = registro[j];
+                registro[j] = registro[j + 1];
+                registro[j + 1] = form;
+            }
+             if (registro[j].nota > registro[j + 1].nota){
+                form = registro[j];
+                registro[j] = registro[j + 1];
+                registro[j + 1] = form;
+            }
+        }
+    }
+}
+int main(void){
+	int N,i;
+	float notaGeral=0,media;
+	scanf("%d*c",&N);
+    REGISTRO form[N];
+	for(i=0;i<N;i++){
+		scanf("%d%*c",&form[i].matricula);
+		gets(form[i].nome);
+		scanf("%f%*c",&form[i].nota);
+		notaGeral=notaGeral+form[i].nota;
+	}
+	media=(notaGeral/(float)N);
+	organize(form,N);
+	
+	for(i=0;i<N;i++){
+	    
+		if(form[i].nota>media)
+		{
+		printf("Matricula: %d Nome: %s Nota: %.1f\n",form[i].matricula,form[i].nome,form[i].nota);	
+		}
+		
+		
+	}
+	printf("Media = %.2f\n",media); 
+return 0;
+}
