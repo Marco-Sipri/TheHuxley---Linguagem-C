@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int DEZ(int num){
+	num = 10;
+	
+	return(num);
+};
+
+int main(){
+	int valor[200], final[200];
+	int n;
+	
+	scanf("%d", &n);
+	
+	for(int i = 0; i < n; i++){
+		scanf("%d", &valor[i]);
+		if(valor[i] > 10){
+			final[i] = DEZ(valor[i]);
+		}else{
+			final[i] = valor[i];
+		}
+	}
+	
+	for(int i = 0; i < n; i++){
+		printf("%d\n", final[i]);
+	}
+	
+	return 0;
+}
