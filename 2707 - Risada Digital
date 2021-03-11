@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    char palavra[51], nova[51], nova2[51];
+    int n, k, c = 0, tam1, tam2;
+    
+    scanf("%d*c", &n);
+    
+    for(int i = 0; i < n; i++)
+    {
+        c = 0;
+        
+        scanf("%s*c", palavra);
+        
+        tam1 = strlen(palavra);
+        
+        for(int j = 0; j < tam1; j++)
+            palavra[j] = tolower(palavra[j]);
+            
+        k = 0;
+        
+        for(int j = 0; j < tam1; j++)
+        {
+            if(palavra[j] == 'a' || palavra[j] == 'e' || palavra[j] == 'i' || palavra[j] == 'o' || palavra[j] == 'u')
+            {
+                nova[k] = palavra[j];
+                k++;
+                c++;
+            }
+        }
+        
+        nova[k] = '\0';
+        tam2 = strlen(nova);
+        k = 0;
+        
+        for(int j = (tam2 - 1); j >= 0; j--)
+        {
+           nova2[k] = nova[j];
+           k++;
+        }
+        
+        nova2[k] = '\0';
+        if(tam1 > 48)
+            printf("INVALIDA\n");
+        else if(c == 0)
+            printf("INVALIDA\n");
+        else if(strcmp(nova, nova2) == 0)
+            printf("ENGRACADA\n");
+        else if(strcmp(nova, nova2) != 0)
+            printf("SEM GRACA\n");
+    }
+    
+    return 0;
+}
